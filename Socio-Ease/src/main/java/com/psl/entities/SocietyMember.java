@@ -9,18 +9,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import com.sun.istack.NotNull;
 
 @Entity
 public class SocietyMember {
 @Id	
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int memberId;
+@NotNull	
 private int noOfMember;
+@NotNull	
 private String memberName;
+@NotNull	
 private String email;
+@NotNull	
 private String password;
+@NotNull	
 private String contact;
+@NotNull	
 private int flatNumber;
+@NotNull	
 private int buildingNumber;
 private int noOfVechile;
 private String photo;
