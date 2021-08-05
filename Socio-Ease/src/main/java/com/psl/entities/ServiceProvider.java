@@ -15,7 +15,7 @@ public class ServiceProvider {
 private int providerId;
 private String providerName;
 private int charges;
-private int contact;
+private String contact;
 private String verificationDoc;
 private String photo;
 @OneToMany(mappedBy="serviceProvider")
@@ -27,7 +27,7 @@ public ServiceProvider() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public ServiceProvider(int providerId, String providerName, int charges, int contact, String verificationDoc,
+public ServiceProvider(int providerId, String providerName, int charges, String contact, String verificationDoc,
 		String photo, Set<Rating> rating, ServiceCategory serviceCategory) {
 	super();
 	this.providerId = providerId;
@@ -57,10 +57,10 @@ public int getCharges() {
 public void setCharges(int charges) {
 	this.charges = charges;
 }
-public int getContact() {
+public String getContact() {
 	return contact;
 }
-public void setContact(int contact) {
+public void setContact(String contact) {
 	this.contact = contact;
 }
 public String getVerificationDoc() {
@@ -100,7 +100,7 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	ServiceProvider other = (ServiceProvider) obj;
-	return charges == other.charges && contact == other.contact && Objects.equals(photo, other.photo)
+	return charges == other.charges && Objects.equals(contact, other.contact) && Objects.equals(photo, other.photo)
 			&& providerId == other.providerId && Objects.equals(providerName, other.providerName)
 			&& Objects.equals(rating, other.rating) && Objects.equals(serviceCategory, other.serviceCategory)
 			&& Objects.equals(verificationDoc, other.verificationDoc);
