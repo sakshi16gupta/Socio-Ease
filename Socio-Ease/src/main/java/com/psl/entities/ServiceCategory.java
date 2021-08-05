@@ -6,11 +6,13 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import com.sun.istack.NotNull;
 
 @Entity
 public class ServiceCategory {
 @Id
 private int categoryId;
+@NotNull 	
 private String categoryName;
 private String categoryImage;
 @OneToMany(mappedBy="serviceCategory")
