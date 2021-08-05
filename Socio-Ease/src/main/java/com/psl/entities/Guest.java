@@ -7,17 +7,22 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import com.sun.istack.NotNull;
 
 @Entity
 public class Guest {
 @Id	
 private int GuestId;
 
-
+@NotNull 
 private String guestName;
+@NotNull 	
 private String guestContact;
+@NotNull 	
 private String guestEmail;
+@NotNull 	
 private int guestCode;
+@NotNull 	
 private boolean vaccinated;
 private LocalDate timestamp;
 @ManyToOne
