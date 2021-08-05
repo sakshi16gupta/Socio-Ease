@@ -7,13 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.sun.istack.NotNull;
 
 @Entity
 public class EventNotification {
 @Id
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int eventId;
+@NotNull	
 private String eventName;
+@NotNull	
 private String notificationBody;
 private LocalDate timestamp;
 public EventNotification() {
