@@ -5,13 +5,18 @@ import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import com.sun.istack.NotNull;
 
 @Entity
 public class CommiteMembers {
 @Id
 private int id;
+
+@NotNull	
 private String personName;
+@NotNull	
 private String contact;
+@NotNull	
 private String role;
 private String photo;
 public CommiteMembers() {
