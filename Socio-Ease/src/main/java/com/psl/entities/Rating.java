@@ -6,11 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import com.sun.istack.NotNull;
 
 @Entity
 public class Rating {
 @Id
 private int ratingId;
+@NotNull 	
 private int categoryId;
 private String feedback;
 private int rating;
