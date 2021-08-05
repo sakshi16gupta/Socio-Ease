@@ -11,14 +11,14 @@ public class CommiteMembers {
 @Id
 private int id;
 private String personName;
-private int contact;
+private String contact;
 private String role;
 private String photo;
 public CommiteMembers() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public CommiteMembers(int id, String personName, int contact, String role, String photo) {
+public CommiteMembers(int id, String personName, String contact, String role, String photo) {
 	super();
 	this.id = id;
 	this.personName = personName;
@@ -38,10 +38,10 @@ public String getPersonName() {
 public void setPersonName(String personName) {
 	this.personName = personName;
 }
-public int getContact() {
+public String getContact() {
 	return contact;
 }
-public void setContact(int contact) {
+public void setContact(String contact) {
 	this.contact = contact;
 }
 public String getRole() {
@@ -69,7 +69,7 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	CommiteMembers other = (CommiteMembers) obj;
-	return contact == other.contact && id == other.id && Objects.equals(personName, other.personName)
+	return Objects.equals(contact, other.contact) && id == other.id && Objects.equals(personName, other.personName)
 			&& Objects.equals(photo, other.photo) && Objects.equals(role, other.role);
 }
 @Override
@@ -77,5 +77,6 @@ public String toString() {
 	return "CommiteMembers [id=" + id + ", personName=" + personName + ", contact=" + contact + ", role=" + role
 			+ ", photo=" + photo + "]";
 }
+
 
 }
