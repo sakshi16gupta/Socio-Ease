@@ -8,14 +8,19 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import com.sun.istack.NotNull;
 
 @Entity
 public class ServiceProvider {
 @Id
 private int providerId;
+@NotNull 	
 private String providerName;
+@NotNull 
 private int charges;
+@NotNull 	
 private String contact;
+@NotNull 	
 private String verificationDoc;
 private String photo;
 @OneToMany(mappedBy="serviceProvider")
