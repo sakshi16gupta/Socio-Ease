@@ -7,18 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class CommiteMembers {
+public class CommitteeMember {
 @Id
 private int id;
 private String personName;
 private int contact;
 private String role;
 private String photo;
-public CommiteMembers() {
+public CommitteeMember() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public CommiteMembers(int id, String personName, int contact, String role, String photo) {
+public CommitteeMember(int id, String personName, int contact, String role, String photo) {
 	super();
 	this.id = id;
 	this.personName = personName;
@@ -68,7 +68,7 @@ public boolean equals(Object obj) {
 		return false;
 	if (getClass() != obj.getClass())
 		return false;
-	CommiteMembers other = (CommiteMembers) obj;
+	CommitteeMember other = (CommitteeMember) obj;
 	return contact == other.contact && id == other.id && Objects.equals(personName, other.personName)
 			&& Objects.equals(photo, other.photo) && Objects.equals(role, other.role);
 }

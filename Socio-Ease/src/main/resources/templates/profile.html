@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <button ><a href="/SocioEase/">Home</a></button>
+ <br>
+ <h2>Society Member</h2>
+ <br>
+<h4 th:text="'ID : ' + ${member.memberId}" />
+<h4 th:text="'No. of member : ' + ${member.noOfMember}" />
+<h4 th:text="'Vehicle : ' + ${member.noOfVechile}" />
+<h4 th:text="'Name : ' + ${member.memberName}" />
+<h4 th:text="'email : ' + ${member.email}" />
+<h4 th:text="'contact : ' + ${member.contact}" />
+<h4 th:text="'Flat No. : ' + ${member.flatNumber}" />
+<h4 th:text="'Building No. : ' + ${member.buildingNumber}" />
+<h4 th:text="'Photo : ' + ${member.photo}" />
+<br>
+<br>
+<h2>----------------------------------------------------------</h2>
+
+<h1>Guests</h1>
+<tr th:each="guest: ${guests}" >
+	<td th:text="'ID : ' + ${guest.GuestId}" />
+	<td th:text="'Name : ' + ${guest.guestName}" />
+	<td th:text="'Contact : ' + ${guest.guestContact}" />
+	<td th:text="'Email : ' + ${guest.guestEmail}" />
+	<td th:text="'GuestCode : ' + ${guest.guestCode}" />
+	<!--  <h4 th:text="'MemberId : ' + ${guest.memberId}" />-->
+	<td th:text="'IsVaccinated : ' + ${guest.vaccinated}" />
+	<br>
+	<h2>---------------------------------------------------------</h2>
+	<br>
+</tr>
+
+<p><a class="btn btn-primary btn-lg" th:href="@{/update/{id}(id=${id})}" role="button">Profile Update &raquo;</a></p>
+
+</body>
+</html>

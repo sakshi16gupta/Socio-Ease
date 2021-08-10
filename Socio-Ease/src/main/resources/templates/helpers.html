@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-This is helpers page
+<h1>This is helpers page</h1>
+<p th:text="${categoryId }">text</p>
+<h2>Committee Members</h2>
+            
+ <!--    <tr th:each="helper: ${helpers }"><br>
+    <td th:text="${helpers.providerName}" />
+    =>
+    <td th:text="${helpers.charges}" />
+    =>
+    <td th:text="${helpers.contact}" />
+    =>
+    <td th:text="${helpers.verificationDoc}" />
+</tr>
+-->
 </body>
 </html>

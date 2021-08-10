@@ -13,19 +13,18 @@ public class ServiceCategory {
 private int categoryId;
 private String categoryName;
 private String categoryImage;
-@OneToMany(mappedBy="serviceCategory")
-private Set<ServiceProvider> serviceProvider;
+//@OneToMany(mappedBy="serviceCategory")
+//private Set<ServiceProvider> serviceProvider;
 public ServiceCategory() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public ServiceCategory(int categoryId, String categoryName, String categoryImage,
-		Set<ServiceProvider> serviceProvider) {
+public ServiceCategory(int categoryId, String categoryName, String categoryImage) {
 	super();
 	this.categoryId = categoryId;
 	this.categoryName = categoryName;
 	this.categoryImage = categoryImage;
-	this.serviceProvider = serviceProvider;
+	//this.serviceProvider = serviceProvider;
 }
 public int getCategoryId() {
 	return categoryId;
@@ -45,15 +44,15 @@ public String getCategoryImage() {
 public void setCategoryImage(String categoryImage) {
 	this.categoryImage = categoryImage;
 }
-public Set<ServiceProvider> getServiceProvider() {
-	return serviceProvider;
-}
-public void setServiceProvider(Set<ServiceProvider> serviceProvider) {
-	this.serviceProvider = serviceProvider;
-}
+//public Set<ServiceProvider> getServiceProvider() {
+//	return serviceProvider;
+//}
+//public void setServiceProvider(Set<ServiceProvider> serviceProvider) {
+//	this.serviceProvider = serviceProvider;
+//}
 @Override
 public int hashCode() {
-	return Objects.hash(categoryId, categoryImage, categoryName, serviceProvider);
+	return Objects.hash(categoryId, categoryImage, categoryName);
 }
 @Override
 public boolean equals(Object obj) {
@@ -65,13 +64,12 @@ public boolean equals(Object obj) {
 		return false;
 	ServiceCategory other = (ServiceCategory) obj;
 	return categoryId == other.categoryId && Objects.equals(categoryImage, other.categoryImage)
-			&& Objects.equals(categoryName, other.categoryName)
-			&& Objects.equals(serviceProvider, other.serviceProvider);
+			&& Objects.equals(categoryName, other.categoryName);
 }
 @Override
 public String toString() {
 	return "ServiceCategory [categoryId=" + categoryId + ", categoryName=" + categoryName + ", categoryImage="
-			+ categoryImage + ", serviceProvider=" + serviceProvider + "]";
+			+ categoryImage + "]";
 }
 
 }

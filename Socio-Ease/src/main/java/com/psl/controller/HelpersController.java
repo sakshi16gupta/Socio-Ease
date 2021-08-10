@@ -1,16 +1,21 @@
 package com.psl.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.psl.service.ServiceProviderService;
+
 @Controller
 public class HelpersController {
 	@Value("${spring.application.name}")
     String appName;
-	//HelpersServices helpersServices = new HelpersServices();
+	
+	@Autowired
+	ServiceProviderService serviceProviderService;
 	
 //	@GetMapping("/helpers")
 //	public String Helpers(Model model) {
@@ -18,10 +23,12 @@ public class HelpersController {
 //		return "helpers";
 //	}
 	
-	@GetMapping("/helpers/{name}")
-	public String HelpersList(Model model,@PathVariable String name) {
+	@GetMapping("/helpers/{categoryId}")
+	public String HelpersList(Model model,@PathVariable int categoryId) {
+		//System.out.println(categoryId);
 		model.addAttribute("appName", appName);
-		//model.addAttribute("helpersList", helpersServices.getAllByName(name));
+		model.addAttribute("categoryId", categoryId);
+		model.addAttribute("helpers", serviceProviderService.getAllByCategoryId(categoryId));
 		return "helpers";
 	}
 }

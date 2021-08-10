@@ -1,0 +1,61 @@
+
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot Thymeleaf Application - Form Samples - Inputs</title>
+</head>
+<body>
+<div>
+<form th:action="@{/guest/{id}(id=${id})}" th:object="${guest}" method="post">
+
+	
+
+     <div class="col-auto">
+     Name:
+        <input type="text" th:value="${guest.guestName}" th:name="guestName" 
+        class="form control">
+	</div>
+	<br>
+	
+	 <div class="col-auto">
+     Email:
+        <input type="text" th:value="${guest.guestEmail}" th:name="guestEmail" 
+        class="form control">
+	</div>
+	<br>
+    
+     <div class="col-auto">
+     Contact:
+        <input type="text" th:value="${guest.guestContact}" th:name="guestContact" 
+        class="form control">
+	</div>
+	<br>
+    
+     <div class="col-auto">
+     Code:
+        <input type="number" th:value="${guest.guestCode}" th:name="guestCode" 
+        class="form control">
+	</div>
+	<br>
+    
+    
+	<br>
+   
+    
+    
+     <div class="col-auto">
+     Vaccinated:
+        <input type="checkbox" th:checked="${guest.vaccinated}" name="vaccinated" 
+        class="form control"/>
+	</div>
+	<br>
+    
+	
+    <input type="submit" value="Submit"/>
+</form>
+</div>
+<br>
+<button><a href ="/SocioEase">Home</a></button>
+</body>
+</html>

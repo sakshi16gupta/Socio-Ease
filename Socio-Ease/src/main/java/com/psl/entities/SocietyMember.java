@@ -24,14 +24,15 @@ private int flatNumber;
 private int buildingNumber;
 private int noOfVechile;
 private String photo;
-@OneToMany(mappedBy="societyMember")
-private Set<Guest> guest;
+//@OneToMany(mappedBy="societyMember")
+//private Set<Guest> guest;
 public SocietyMember() {
 	super();
 	// TODO Auto-generated constructor stub
 }
+
 public SocietyMember(int memberId, int noOfMember, String memberName, String email, String password, int contact,
-		int flatNumber, int buildingNumber, int noOfVechile, String photo, Set<Guest> guest) {
+		int flatNumber, int buildingNumber, int noOfVechile, String photo) {
 	super();
 	this.memberId = memberId;
 	this.noOfMember = noOfMember;
@@ -43,7 +44,7 @@ public SocietyMember(int memberId, int noOfMember, String memberName, String ema
 	this.buildingNumber = buildingNumber;
 	this.noOfVechile = noOfVechile;
 	this.photo = photo;
-	this.guest = guest;
+	//this.guest = guest;
 }
 public int getMemberId() {
 	return memberId;
@@ -105,15 +106,15 @@ public String getPhoto() {
 public void setPhoto(String photo) {
 	this.photo = photo;
 }
-public Set<Guest> getGuest() {
-	return guest;
-}
-public void setGuest(Set<Guest> guest) {
-	this.guest = guest;
-}
+//public Set<Guest> getGuest() {
+//	return guest;
+//}
+//public void setGuest(Set<Guest> guest) {
+//	this.guest = guest;
+//}
 @Override
 public int hashCode() {
-	return Objects.hash(buildingNumber, contact, email, flatNumber, guest, memberId, memberName, noOfMember,
+	return Objects.hash(buildingNumber, contact, email, flatNumber, memberId, memberName, noOfMember,
 			noOfVechile, password, photo);
 }
 @Override
@@ -126,7 +127,7 @@ public boolean equals(Object obj) {
 		return false;
 	SocietyMember other = (SocietyMember) obj;
 	return buildingNumber == other.buildingNumber && contact == other.contact && Objects.equals(email, other.email)
-			&& flatNumber == other.flatNumber && Objects.equals(guest, other.guest) && memberId == other.memberId
+			&& flatNumber == other.flatNumber && memberId == other.memberId
 			&& Objects.equals(memberName, other.memberName) && noOfMember == other.noOfMember
 			&& noOfVechile == other.noOfVechile && Objects.equals(password, other.password)
 			&& Objects.equals(photo, other.photo);
@@ -135,8 +136,7 @@ public boolean equals(Object obj) {
 public String toString() {
 	return "SocietyMember [memberId=" + memberId + ", noOfMember=" + noOfMember + ", memberName=" + memberName
 			+ ", email=" + email + ", password=" + password + ", contact=" + contact + ", flatNumber=" + flatNumber
-			+ ", buildingNumber=" + buildingNumber + ", noOfVechile=" + noOfVechile + ", photo=" + photo + ", guest="
-			+ guest + "]";
+			+ ", buildingNumber=" + buildingNumber + ", noOfVechile=" + noOfVechile + ", photo=" + photo + "]";
 }
 
 
