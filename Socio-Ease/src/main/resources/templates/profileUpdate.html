@@ -49,7 +49,7 @@ integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/
   </div>
   <div class="col-md-2">
     <button type="submit" class="btn btn-primary">Update</button>
-  	<button type="button" class="btn btn-primary">Back to profile</button>
+  	<button class="btn btn-primary"><a th:href="@{profile/{id}(id=${id})}" role="button"></a>Back &raquo;</button>
   </div>
 </form>
 </body>

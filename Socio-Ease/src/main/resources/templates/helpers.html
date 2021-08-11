@@ -5,11 +5,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>This is helpers page</h1>
-<p th:text="${categoryId }">text</p>
-<h2>Committee Members</h2>
-            
- <!--    <tr th:each="helper: ${helpers }"><br>
+<h1>List of helpers</h1>
+<tr th:each="helpers: ${helpers }"><br>
     <td th:text="${helpers.providerName}" />
     =>
     <td th:text="${helpers.charges}" />
@@ -18,6 +15,5 @@
     =>
     <td th:text="${helpers.verificationDoc}" />
 </tr>
--->
 </body>
 </html>

@@ -44,6 +44,6 @@ public class GuestController {
 		g.setSocietyMember(memberService.getSocietyMember(id));
 		g.setTimestamp(LocalDate.now());
 		service.addGuest(g);
-		return "redirect:/guest/"+id;
+		return "redirect:/profile/"+id;
 	}
 }
