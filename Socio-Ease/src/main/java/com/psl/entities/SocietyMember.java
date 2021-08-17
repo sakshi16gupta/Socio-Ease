@@ -19,7 +19,7 @@ private int noOfMember;
 private String memberName;
 private String email;
 private String password;
-private int contact;
+private String contact;
 private int flatNumber;
 private int buildingNumber;
 private int noOfVechile;
@@ -31,7 +31,7 @@ public SocietyMember() {
 	// TODO Auto-generated constructor stub
 }
 
-public SocietyMember(int memberId, int noOfMember, String memberName, String email, String password, int contact,
+public SocietyMember(int memberId, int noOfMember, String memberName, String email, String password, String contact,
 		int flatNumber, int buildingNumber, int noOfVechile, String photo) {
 	super();
 	this.memberId = memberId;
@@ -76,10 +76,10 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public int getContact() {
+public String getContact() {
 	return contact;
 }
-public void setContact(int contact) {
+public void setContact(String contact) {
 	this.contact = contact;
 }
 public int getFlatNumber() {

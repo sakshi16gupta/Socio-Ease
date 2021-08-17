@@ -28,7 +28,7 @@ public class CommitteeMembersTest {
 	@ParameterizedTest
 	@ValueSource(ints= {1,2})
 	void addCommitteeMemberTest(int memberId) {
-		CommitteeMember memberObject= new CommitteeMember(memberId,"Ajay Sharma",95425555,"Secretory","D:\\documents");
+		CommitteeMember memberObject= new CommitteeMember(memberId,"Ajay Sharma","95425555","Secretory","D:\\documents");
 		committeeMemberService.addCommitteeMember(memberObject);
 		CommitteeMember member=dao.findById(memberId).get();
 		assertEquals(member,memberObject);

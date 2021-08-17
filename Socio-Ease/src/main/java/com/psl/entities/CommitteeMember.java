@@ -14,14 +14,14 @@ public class CommitteeMember {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int id;
 private String personName;
-private int contact;
+private String contact;
 private String role;
 private String photo;
 public CommitteeMember() {
 	super();
 	// TODO Auto-generated constructor stub
 }
-public CommitteeMember(int id, String personName, int contact, String role, String photo) {
+public CommitteeMember(int id, String personName, String contact, String role, String photo) {
 	super();
 	this.id = id;
 	this.personName = personName;
@@ -41,10 +41,10 @@ public String getPersonName() {
 public void setPersonName(String personName) {
 	this.personName = personName;
 }
-public int getContact() {
+public String getContact() {
 	return contact;
 }
-public void setContact(int contact) {
+public void setContact(String contact) {
 	this.contact = contact;
 }
 public String getRole() {

@@ -29,9 +29,9 @@ public class ServiceProviderTest {
 	void addServiceProvider(int providerId) {
 
 		ServiceCategory serviceCategory = new ServiceCategory(1, "d://documents", "Plumber");
-		ServiceProvider sp = new ServiceProvider(providerId, "ElectricShop", 500, 951236,  "AdharCard","d://document", null,
-				serviceCategory); // rating k jagah kya likhenge //yeha pe values dalenge
-		service.addServiceProvider(sp); // ye function show kyun nai ho ra
+		ServiceProvider sp = new ServiceProvider(providerId, "ElectricShop", 500, "951236",  "AdharCard","d://document",
+				serviceCategory); 
+		service.addServiceProvider(sp); 
 		ServiceProvider servicep = dao.findById(providerId).get();
 		assertEquals(sp, servicep);
 	}

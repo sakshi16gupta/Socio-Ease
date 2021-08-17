@@ -35,10 +35,11 @@ integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/
     <td th:text="${helpers.charges}" />
     <td th:text="${helpers.contact}" />
     <td th:text="${helpers.verificationDoc}" />
-    
+    <td><a th:href="@{/rating/{id}(id=${helpers.providerId})}">view rating</a></td>
+    <td><a th:href="@{/addrating/{id}(id=${helpers.providerId})}">add rating</a></td>
     <td sec:authorize="hasAnyAuthority('ADMIN')">
-    <a th:href="@{'/edit/helper/' + ${helpers.providerId}}">Edit</a>
-	<a th:href="@{'/delete/helper/' + ${helpers.providerId}}">Delete</a>		
+    <a th:href="@{/edithelper/{id}(id=${helpers.providerId})}">Edit</a>
+	<a th:href="@{/deletehelper/{id}(id=${helpers.providerId})}">Delete</a>		
     </td>
 </tr>
 </table>

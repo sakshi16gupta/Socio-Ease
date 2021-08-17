@@ -38,7 +38,7 @@ public class SocietyMemberTest {
 	@Test
 	void addSocietymemberTest() {
 		int memberId=2;
-		SocietyMember societyMember=new SocietyMember(memberId,2,"jack","jack@gmail.com","password",958933,1,4,3,"d://documents/");
+		SocietyMember societyMember=new SocietyMember(memberId,2,"jack","jack@gmail.com","password","958933",1,4,3,"d://documents/");
 		societyMemberService.addSocietyMember(societyMember);
 		SocietyMember member=dao.findById(societyMember.getMemberId()).get();
 		assertEquals(societyMember,member);
@@ -55,7 +55,7 @@ public class SocietyMemberTest {
 	@ValueSource(ints= {3})
 	void updateSocietyMemberTest(int memberId) {
 		SocietyMember memberBeforeUpdate=dao.findById(memberId).get();
-		SocietyMember societyMember=new SocietyMember(memberId,2,"paul","paul12@gmail.com","password",958933,1,4,3,"d://documents/");
+		SocietyMember societyMember=new SocietyMember(memberId,2,"paul","paul12@gmail.com","password","958933",1,4,3,"d://documents/");
 		societyMemberService.updateSocietyMember(societyMember);
 		SocietyMember memberAfterUpdate=dao.findById(memberId).get();
 		assertNotEquals(memberBeforeUpdate,memberAfterUpdate);

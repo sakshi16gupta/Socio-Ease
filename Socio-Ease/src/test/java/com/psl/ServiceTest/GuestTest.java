@@ -33,7 +33,7 @@ public class GuestTest {
 	@ParameterizedTest
 	@ValueSource(ints= {1})
 	void addGuestTest(int guestId) {
-		SocietyMember sc=new SocietyMember(1,12,"paul","paul@gmail.com","jgfsjd",656565,25,3,4,"dfhskfh");
+		SocietyMember sc=new SocietyMember(1,12,"paul","paul@gmail.com","jgfsjd","656565",25,3,4,"dfhskfh");
 		LocalDate ld=LocalDate.now();
 		Guest guest=new Guest(guestId,"Nick","9587441122","nickblaine@gmail.com",5263,true,ld,sc);
 		guestService.addGuest(guest);
@@ -59,7 +59,7 @@ public class GuestTest {
 	@ParameterizedTest
 	@ValueSource(ints= {2})
 	void deleteGuestTest(int guestId) {
-		SocietyMember member=new SocietyMember(2,12,"paul","paul@gmail.com","jgfsjd",656565,25,3,4,"dfhskfh");
+		SocietyMember member=new SocietyMember(2,12,"paul","paul@gmail.com","jgfsjd","656565",25,3,4,"dfhskfh");
 		dao.save(new Guest(2,"Ria","63546454","ria@gmail.com",5236,true,LocalDate.now(),member));
 		Boolean presentBeforeDelete=dao.findById(guestId).isPresent();
 		guestService.deleteGuest(guestId);

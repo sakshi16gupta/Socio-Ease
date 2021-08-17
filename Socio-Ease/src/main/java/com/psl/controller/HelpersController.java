@@ -54,5 +54,27 @@ public class HelpersController {
 		serviceProviderService.addServiceProvider(s);
 		return "redirect:/addhelper/"+id;
 	}
+	@GetMapping("/edithelper/{id}")
+	public String editHelper(Model model, @PathVariable int id) {
+		model.addAttribute("appName", appName);
+		ServiceProvider helper = serviceProviderService.getServiceProvider(id);
+		model.addAttribute("helper",helper);
+		return "edithelper";
+	}
+	
+	@PostMapping("/edithelper/{id}")
+	public String editHelperPost(Model model,@PathVariable int id,@ModelAttribute ServiceProvider s, BindingResult results) {
+		model.addAttribute("appName", appName);
+		s.setProviderId(id);
+		s.setServiceCategory(serviceProviderService.getServiceProvider(id).getServiceCategory());
+		serviceProviderService.updateServiceProvider(s);
+		return "redirect:/edithelper/"+id;
+	}
+	
+	@GetMapping("/deletehelper/{id}")
+	public String deleteCommitteeMember(Model model,@PathVariable("id") int id) {
+		serviceProviderService.deleteServiceProvider(id);
+		return "delete";
+	}
 }
 

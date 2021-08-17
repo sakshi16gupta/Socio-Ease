@@ -1,5 +1,7 @@
 package com.psl.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -61,17 +63,11 @@ public class ProfileController {
 		return "redirect:/profile/"+id;
 	}
 	
-	
-	@GetMapping("/addcommitteemember")
-	public String addCommitteeMember(Model model) {
-		CommitteeMember s = new CommitteeMember();
-		model.addAttribute("member",s);
-		return "addcommitteemember";
+	@GetMapping("/members")
+	public String members(Model model) {
+		Iterable<SocietyMember> members = service.findAll();
+		model.addAttribute("members",members);
+		return "members";
 	}
-	
-	@PostMapping("/addcommitteemember")
-	public String addCommitteeMemberPost(Model model,@ModelAttribute CommitteeMember s, BindingResult results) {
-		committeeMemberService.addCommitteeMember(s);
-		return "redirect:/addcommitteemember";
-	}
+
 }

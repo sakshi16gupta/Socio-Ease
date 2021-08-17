@@ -71,7 +71,7 @@ integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/
             <h2>Committee Members</h2>
              <div sec:authorize="hasAnyAuthority('ADMIN')">
 				<a th:href="@{/addcommitteemember}">Add Committee Member</a>
-				<a th:href="@{/addmember}">Add Society Member</a>
+				<a th:href="@{/members}">Society Members</a>
 			</div>
 			<table class="table table-striped">
 			<tr>
@@ -86,9 +86,9 @@ integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/
     <td th:text="${committee.role}" />
     <td th:text="${committee.photo}" />
     <td sec:authorize="hasAnyAuthority('ADMIN')">
-    <a th:href="@{'/edit/event/' + ${committee.id}}">Edit</a>
-    <a th:href="@{'/delete/event/' + ${committee.id}}">Delete</a>
-	</td>
+     <!--  <a th:href="@{'/edit/event/' + ${committee.id}}">Edit</a>-->
+     <a th:href="@{/editcommitteemember/{id}(id=${committee.id})}">Edit</a>
+    <a th:href="@{/deletecommitteemember/{id}(id=${committee.id})}">Delete</a>
 </tr>
      </table>     </div>
           

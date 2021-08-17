@@ -29,6 +29,10 @@ public class SocietyMemberService {
 		dao.deleteById(id);
 	}
 	
+	public Iterable<SocietyMember> findAll(){
+		return dao.findAll();
+	}
+	
 	public boolean checkMember(String email,String password) {
 		//System.out.println("email: " + email + " ==== password : " + password);
 		System.out.println((dao.findByEmail(email)!=null)+" in service checking email");
